@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1493497813 source:c:\users\acer\desktop\codeblocks\project\main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+	<cstdlib>
+
+1493659546 source:f:\project\main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+	<cstdlib>
+

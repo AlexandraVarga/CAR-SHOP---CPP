@@ -1,0 +1,50 @@
+void cautaMasiniProducator (char *s)
+{
+    nod *p=cap;
+    char model[200][200],pret[200][200],culoare[200][200],nr[200][200];
+    int i=0,k=0,j=0,ok=0;
+    while(p)
+    {
+        if(stricmp(s,p->prod)==0)
+        {
+            ok=1;
+            strcpy(model[k],p->model);
+            strcpy(pret[k],p->pret);
+            strcpy(culoare[k],p->culoare);
+            strcpy(nr[k],p->nr);
+            k++;
+        }
+        p=p->urm;
+    }
+    if(ok==1)
+    {
+        for(i=0; i<k; i++)
+        {
+            for(j=i+1; j<k; j++)
+            {
+                if(stricmp(model[i],model[j])>0)
+                {
+                    swap(model[i],model[j]);
+                    swap(pret[i],pret[j]);
+                    swap(culoare[i],culoare[j]);
+                    swap(nr[i],nr[j]);
+                }
+            }
+        }
+        for(i=0; i<k; i++)
+        {
+            cout<<"\n";
+            cout<<" Model: "<<model[i]<<"\n";
+            cout<<" Pret: "<<pret[i]<<" euro"<<"\n";
+            cout<<" Culoare: "<<culoare[i]<<"\n";
+            cout<<" Numar de inmatriculare: "<<nr[i]<<"\n";
+            cout<<"\n";
+        }
+    }
+    else
+    {
+        cout<<"\n";
+        cout<<" NU EXISTA!";
+        cout<<"\n";
+    }
+}
